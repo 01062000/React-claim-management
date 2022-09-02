@@ -50,7 +50,7 @@ function ViewStatus() {
   const getClaimStatus = async () => {
     const claimStatus = await axios
       .get(
-        `http://localhost:8099/memberModule/getAllClaims/${localStorage.getItem(
+        `http://35.166.51.142:8099/memberModule/getAllClaims/${localStorage.getItem(
           "id"
         )}`,
         {
@@ -80,7 +80,7 @@ function ViewStatus() {
           {claims.length == 0 ? (
             <Stack sx={{ width: "50%" }} spacing={2}>
               <Alert severity="info">
-                You Have Not Claimed Anything Yet...!!!
+                You have not Claimed anything yet...!!!
               </Alert>
             </Stack>
           ) : (

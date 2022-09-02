@@ -31,7 +31,7 @@ function Login() {
   const [error, setError] = useState("");
 
   const getLogin = async () => {
-    const response = await fetch("http://localhost:8008/authorization/login", {
+    const response = await fetch("http://54.185.184.164:8008/authorization/login", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -41,7 +41,7 @@ function Login() {
     });
     const memberData = await response.json();
     if (memberData.status === 500) {
-      setError(memberData.message);
+      setError("Incorrect Username or Password!");
     }else{
       localStorage.setItem("id", memberData.memberId);
       localStorage.setItem("name", memberData.username);

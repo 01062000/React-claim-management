@@ -1,12 +1,12 @@
 /** @format */
 
 import React, { useState } from "react";
-import axios from "axios";
 import Nav from "./Nav";
 
 import TextField from "@mui/material/TextField";
 import MenuItem from "@mui/material/MenuItem";
 import { Button } from "@mui/material";
+import SendIcon from '@mui/icons-material/Send';
 
 import "../Pages/profile.css";
 import Menu from "./Menu";
@@ -112,7 +112,7 @@ function SubmitClaim() {
   const accessToken = JSON.parse(JSON.stringify(localStorage.getItem("token")));
 
   const submitClaim = async () => {
-    const response = await fetch("http://localhost:8099/memberModule/submitClaim", {
+    const response = await fetch("http://35.166.51.142:8099/memberModule/submitClaim", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${accessToken}`,
@@ -203,8 +203,9 @@ function SubmitClaim() {
 
           <Button
             variant="outlined"
+            endIcon={<SendIcon />}
             sx={{
-              width: 100,
+              width: 120,
               border: "1px solid #0D1219",
               color: "#0D1219",
               ":hover": {

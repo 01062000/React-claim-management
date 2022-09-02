@@ -47,7 +47,7 @@ function ViewBills() {
   const getBills = async () => {
     const bill = await axios
       .get(
-        `http://localhost:8099/memberModule/viewBills/${localStorage.getItem(
+        `http://35.166.51.142:8099/memberModule/viewBills/${localStorage.getItem(
           "id"
         )}`,
         {
